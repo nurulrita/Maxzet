@@ -1,0 +1,38 @@
+from django import forms
+from django.contrib.auth.models import User
+from .models import *
+
+
+class UserForm(forms.ModelForm):
+    password = forms.CharField(widget=forms.PasswordInput())
+
+    class Meta:
+        model = User
+        fields = ('username', 'email', 'password')
+
+class UserProfileForm(forms.ModelForm):
+    class Meta:
+        model = UserProfile
+        fields = ('nama_lengkap','jenis_kelamin','tanggal_lahir','no_hp','alamat','kode_pos')
+
+class TransaksiFormMen(forms.ModelForm):
+    ALAMAT=(('P','Alamat Profil'),('L','Alamat Lain'))
+    Banyaknya=((1,1),(2,2),(3,3,),(4,4),(5,5))
+    banyaknya=forms.ChoiceField(required=True,choices=Banyaknya)
+    pilihan_alamat=forms.ChoiceField(required=True,choices=ALAMAT)
+    alamat_pengiriman=forms.CharField(widget=forms.Textarea)
+    
+    class Meta:
+	model=TransaksiMen
+	fields=('jenis_pembayaran',)
+
+class TransaksiForm(forms.ModelForm):
+    ALAMAT=(('P','Alamat Profil'),('L','Alamat Lain'))
+    Banyaknya=((1,1),(2,2),(3,3,),(4,4),(5,5))
+    banyaknya=forms.ChoiceField(required=True,choices=Banyaknya)
+    pilihan_alamat=forms.ChoiceField(required=True,choices=ALAMAT)
+    alamat_pengiriman=forms.CharField(widget=forms.Textarea)
+    
+    class Meta:
+	model=TransaksiMen
+	fields=('jenis_pembayaran',)

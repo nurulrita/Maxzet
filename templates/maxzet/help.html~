@@ -1,0 +1,15 @@
+{% extends "maxzet/main.html" %}
+{% load staticfiles %}
+{% block main %}
+<div class="content_container" id="mf81">
+<div class="left_col" id="mf82">
+<div style="text-align: justify;" id="mf84">
+
+</div></div>
+
+<div class="right_col" id="mf105">
+<img src="http://static02-cf-id.zalora.com/cms/faq_installment/faq/design_FAQ_02.jpg" alt="Fashion Online ZALORA Indonesia">
+</div>
+
+</div>
+{% endblock %}

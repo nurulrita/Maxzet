@@ -1,0 +1,104 @@
+{% extends "maxzet/main.html" %}
+{% block main %}
+{% load staticfiles %}
+    <!-- Page Heading -->
+
+                
+			<!-- /.row -->
+    <div class="row">
+        <div class="col-lg-12">
+              <div class="table-responsive">
+                       {% if barang %}
+
+                
+                          {% for barang in barang %}
+                
+		<div class="grids_of_4">
+		  <div class="grid1_of_4">
+				<div class="content_box"><a href="#">
+			   	  <div class="view view-fifth">
+			   	   	 <img src= {{barang.gambar}} class="img-responsive" alt=""/>
+				   	   	<div class="mask1">
+	                        <div class="info"> </div>
+			            </div>
+				   	  </a>
+				   </div>
+				    <h5><a href="#"> {{barang.nama}}</a></h5>
+				    <h6>{{barang.deskripsi}}<h6>
+				     {{barang.harga}}
+			   	</div>
+			</div>
+			
+					
+				{% endfor %}
+				{% for barang in barang %}
+                
+		<div class="grids_of_4">
+		  <div class="grid1_of_4">
+				<div class="content_box"><a href="#">
+			   	  <div class="view view-fifth">
+			   	   	 <img src= {{barang.gambar}} class="img-responsive" alt=""/>
+				   	   	<div class="mask1">
+	                        <div class="info"> </div>
+			            </div>
+				   	  </a>
+				   </div>
+				    <h5><a href="#"> {{barang.nama}}</a></h5>
+				    <h6>{{barang.deskripsi}}<h6>
+				     {{barang.harga}}
+			   	</div>
+			</div>
+			
+					
+				{% endfor %}
+				{% for barang in barang %}
+                
+		<div class="grids_of_4">
+		  <div class="grid1_of_4">
+				<div class="content_box"><a href="#">
+			   	  <div class="view view-fifth">
+			   	   	 <img src= {{barang.gambar}} class="img-responsive" alt=""/>
+				   	   	<div class="mask1">
+	                        <div class="info"> </div>
+			            </div>
+				   	  </a>
+				   </div>
+				    <h5><a href="#"> {{barang.nama}}</a></h5>
+				    <h6>{{barang.deskripsi}}<h6>
+				     {{barang.harga}}
+			   	</div>
+			</div>
+			
+					
+				{% endfor %}
+				{% for barang in barang %}
+                
+		<div class="grids_of_4">
+		  <div class="grid1_of_4">
+				<div class="content_box"><a href="#">
+			   	  <div class="view view-fifth">
+			   	   	 <img src= {{barang.gambar}} class="img-responsive" alt=""/>
+				   	   	<div class="mask1">
+	                        <div class="info"> </div>
+			            </div>
+				   	  </a>
+				   </div>
+				    <h5><a href="#"> {{barang.nama}}</a></h5>
+				    <h6>{{barang.deskripsi}}<h6>
+				     {{barang.harga}}
+			   	</div>
+			</div>
+			
+					
+				{% endfor %}
+                            {% else %}
+                                <strong>No barang inputted yet.</strong>
+                            {% endif %}
+		
+                                
+                        </div>
+
+        </div>
+    </div>
+<div class="clearfix"></div>
+{% endblock %}

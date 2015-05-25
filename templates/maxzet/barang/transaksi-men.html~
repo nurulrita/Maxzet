@@ -1,0 +1,16 @@
+{% extends "maxzet/main.html" %}
+{% load staticfiles %}
+{% block main %}
+
+        <form id="user_form" method="post" action="{% url 'transaksi-men' id.id %}" >
+
+            {% csrf_token %}
+
+            
+		{{form.as_p}}
+			
+			
+            <!-- Provide a button to click to submit the form. -->
+            <input type="submit" name="submit" value="Bayar" />
+        </form>
+{% endblock %}

@@ -1,0 +1,77 @@
+{% extends "maxzet/main.html" %}
+{% load staticfiles %}
+{% block main %}
+
+        {% if registered %}
+        <strong>Thank you for registering!</strong>
+        <a href="{%url 'men' %}">Return to the homepage.</a><br />
+        {% else %}
+        
+
+        <form id="user_form" method="post" action="{% url 'register'%}" >
+
+            {% csrf_token %}
+
+            
+            <div class="form-group">
+                    <label for="id_nama_lengkap">Nama Lengkap</label>
+                    <p>
+                      {{ profile_form.nama_lengkap }} 
+                    </p>
+            </div>
+            
+            <div class="form-group">
+                    <label for="id_username">Username</label>
+                    <p>
+                      {{ user_form.username }}
+                    </p>
+            </div>            
+            <div class="form-group">
+                    <label for="id_email">Email</label>
+                    <p>
+                      {{ user_form.email }}
+                    </p>
+            </div>
+            <div class="form-group">
+                    <label for="id_password">Password</label>
+                    <p>
+                      {{ user_form.password }}            
+                    </p>
+            </div>
+            <div class="form-group">
+                    <label for="id_jenis_kelamin">Jenis Kelamin</label>
+                    <p>
+                      {{ profile_form.jenis_kelamin }}
+                    </p>
+            </div>
+            <div class="form-group">
+                    <label for="id_tanggal_lahir">Tanggal Lahir</label>
+                    <p>
+                      {{ profile_form.tanggal_lahir }}
+                    </p>
+            </div>
+            <div class="form-group">
+                    <label for="id_no_hp">Nomor Handphone</label>
+                    <p>
+                      {{ profile_form.no_hp }}
+                    </p>
+            </div>
+			<div class="form-group">
+                    <label for="id_alamat">Alamat</label>
+                    <p>
+                      {{ profile_form.alamat }}
+                    </p>
+            </div>
+			<div class="form-group">
+                    <label for="id_kode_pos">Kode Pos</label>
+                    <p>
+                      {{ profile_form.kode_pos }}
+                    </p>
+            </div>
+			
+			
+            <!-- Provide a button to click to submit the form. -->
+            <input type="submit" name="submit" value="Register" />
+        </form>
+        {% endif %}
+    {%endblock%}

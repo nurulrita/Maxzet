@@ -1,0 +1,29 @@
+{% extends "maxzet/main.html" %}
+{% load staticfiles %}
+{% block main %}
+ <div class="register">
+			  <div class="col-md-6 login-right">
+			  	<h3>REGISTERED CUSTOMERS</h3>
+				<p>If you have an account with us, please log in.</p>
+				<form method="post" action="{% url 'login' %}" autocomplete="on">
+				  <div>
+					<span>Username<label>*</label></span>
+					{% csrf_token %}
+					<input type="text" name="username" value="" placeholder="Username">
+				  </div>
+				  <div>
+					<span>Password<label>*</label></span>
+					<p><input type="password" name="password" value="" placeholder="Password"></p>
+				  </div>
+				  
+				  <input type="submit" value="Login">
+			    </form>
+			   </div>
+			    <div class="col-md-6 login-left">
+			  	 <h3>NEW CUSTOMERS</h3>
+				 <p>By creating an account with our store, you will be able to move through the checkout process faster, store multiple shipping addresses, view and track your orders in your account and more.</p>
+				 <a class="acount-btn" href="{% url 'register' %}">Create an Account</a>
+			   </div>	
+			   <div class="clearfix"> </div>
+		</div>
+{% endblock %}

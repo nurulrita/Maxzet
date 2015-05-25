@@ -1,0 +1,20 @@
+{% extends "maxzet/main.html" %}
+{% load staticfiles %}
+{% block main %}
+
+<center><img src="{% static 'images/home1.jpg' %}" width="996" height="406" usemap="#homemap"></center>
+<map name="homemap">
+<area shape="poly" coords=”0,0,497,0,465,406,0,406″ href= "{% url 'women' %}" title="women"/>
+<area shape="poly" coords=”498,0,996,0,996,406,466,406″ href="{% url 'men' %}" title="men"/>
+</map>
+<br>
+<center><img src="{% static 'images/home2.jpg' %}" href= "http://localhost/maxzet/main/women">
+<img src="{% static 'images/home3.jpg' %}" href= "http://localhost/maxzet/main/women">
+<img src="{% static 'images/home4.jpg' %}" href= "http://localhost/maxzet/main/women"></center>
+
+<br><br><br>
+<h4 style = "margin-left: 170px">EXPLORE MORE</h4>
+<center><img src="{% static 'images/home5.jpg' %}" href= "http://maxzet/women">
+<img src="{% static 'images/home6.jpg' %}" href= "http://maxzet/women">
+<img src="{% static 'images/home7.jpg' %}" href= "http://maxzet/women"></center>
+{% endblock %}
